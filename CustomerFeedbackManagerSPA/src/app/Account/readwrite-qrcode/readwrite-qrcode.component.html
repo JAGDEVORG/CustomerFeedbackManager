@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-sm-center h-100">
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="d-flex align-items-center">
+
+                                <button type="button" (click)="generateQRCode()" class="btn btn-primary ms-auto">
+                                    Generate QR Cde
+                                </button>
+                                <button type="button" (click)="readQRCode()" class="btn btn-primary ms-auto">
+                                    Scan QR Code
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <app-generate-qrcode *ngIf="isGenerate"></app-generate-qrcode>
+    <app-read-qrcode *ngIf="isCreate"></app-read-qrcode>
+</body>
+
+</html>

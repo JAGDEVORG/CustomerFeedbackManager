@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Login</title>
+</head>
+
+<body>
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-sm-center h-100">
+				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+					
+					<div class="card shadow-lg">
+						<div class="card-body p-5">
+							<h1 class="fs-4 card-title fw-bold mb-4">QR Code Generator </h1>
+							<div  novalidate class="needs-validation" autocomplete="off">
+								<div class="mb-3">
+									<ngx-qrcode *ngIf="value" [elementType]="elementType" [errorCorrectionLevel]="correctionLevel" [value]="value"
+                        cssClass="bshadow"></ngx-qrcode>
+								</div>
+								<div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="mb-2 text-muted" for="email">Enter the value to generate QR code <sup class="winput-error">*</sup></label>
+									
+                                        <textarea [(ngModel)] = "value" class="form-control" ></textarea>
+									</div>
+								
+								</div>
+
+								
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

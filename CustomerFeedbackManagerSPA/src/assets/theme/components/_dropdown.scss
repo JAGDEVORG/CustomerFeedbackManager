@@ -1,0 +1,30 @@
+.wdrop {
+    &-label {
+        @extend .d-flex;
+        @extend .ai-center;
+        @extend .cursor-pointer;
+        @extend .transition;
+        background: #F1F5F9;
+        border-radius: 15px;
+        padding: 6px $gutter-default;
+        font-size: 14px;
+        &:hover {
+            background: darken(#F1F5F9, 10);
+        }
+        &text {
+            margin: 0 $gutter-default / 2;
+        }
+        &.no-bg {
+            background: transparent;
+            &:hover {
+                background: #F1F5F9;
+            }
+        }
+        &.primary {
+            color: $primary;
+            // .wdrop-labeltext {
+            //     color: $primary;
+            // }
+        }
+    }
+}

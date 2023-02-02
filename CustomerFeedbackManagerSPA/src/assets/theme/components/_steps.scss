@@ -1,0 +1,146 @@
+.wstep {
+    &-item {
+        @extend .d-flex;
+        @extend .ai-center;
+        @extend .cursor-pointer;
+        margin-bottom: $gutter-default;
+        &.active {
+            .wstep-count {
+                background: $primary;
+                color: $white;
+            }
+        }
+        &:hover, &.active {
+            .wstep-name {
+                color: $black;
+            }
+        }
+    }
+    &-count {
+        @extend .d-flex;
+        @extend .ai-center;
+        @extend .jc-center;
+        @extend .transition;
+        width: 30px;
+        height: 30px;
+        background: $background-light;
+        margin-right: $gutter-default;
+        border-radius: 5px;
+        color: $text-light;
+    }
+    &-name {
+        @extend .transition;
+        color: $text-dark;
+    }
+}
+::ng-deep {
+    .wstep-nb {
+        //Override Nebular Default Design
+        .header {
+            margin-bottom: $gutter-default !important;
+            align-items:  center !important;
+            justify-content:  flex-start !important;
+            @include devices(mobile){
+                display: block;
+            }
+        }
+        .step {
+            flex-direction: row !important;
+            flex-shrink: 0 !important;
+            width: max-content !important;            
+            @extend .ai-center;
+            margin-left: 0 !important;
+            @include devices(mobile){
+                width: 100% !important;
+                margin-bottom: $gutter-default;
+            }
+            .label {
+                @include devices(tablet){
+                    display: none;
+                }
+                @include devices(mobile){
+                    display: block;
+                    padding-bottom: $gutter-default;
+                }
+                span {
+                    color: $text-dark !important;
+                    
+                }
+            }
+                
+            &.selected {
+                .label-index {
+                    background: $primary !important;
+                    span {
+                        color: $white !important;
+                    }
+                }
+                .label span {
+                    color: $black !important;
+                }
+            }
+            &.completed {
+                .label-index {
+                    background: $success !important;
+                    @extend .pos-rel;
+                    &:before {
+                        content: "✔";
+                        @extend .pos-abs;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 3;
+                        color: $white !important;
+                    }
+                    nb-icon {
+                        display:  none !important;
+                    }
+                    span {
+                        color: $white  !important;
+                    }
+                }
+                .label span {
+                    color: $success !important;
+                }
+            }
+        }
+        .label {
+            &-index {
+                width: 35px !important;
+                height: 35px !important;
+                margin-right: $gutter-default;
+                margin-bottom: 0 !important;
+                border: 0 !important;
+                @extend .d-flex;
+                @extend .ai-center;
+                @extend .jc-center;
+                @extend .transition;
+                background: $white !important;
+                span {
+                    color: $text-light !important;
+                }
+            }
+        }
+        .connector {
+            margin: 0 $gutter-default !important;
+            max-width: 100px;
+            background: $border-color !important;
+           @include devices(mobile){
+             display: none;
+           }
+        }
+    }
+    .wstep-vertical {
+        .step {
+            flex-direction: column !important;
+            margin: 0 !important;
+            @include devices(mobile){
+                width: 100% !important;
+            }
+            .label-index {
+                margin: 0 !important;
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+}

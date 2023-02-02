@@ -1,0 +1,13 @@
+<p>testng-template works!</p>
+
+<toggle>
+    <ng-template let-on="on" let-toggle="toggle">
+        {{ on
+        ? 'Toggle on enable the content.'
+        : 'Toggle off disable the content!'}}
+        <!-- The red squiggles on toggle() can be ignored, but are annoying. -->
+        <app-switch [on]="on" (click)="toggle()"></app-switch>
+        <hr />
+        <app-my-toggle [on]="on" (toggle)="toggle()"></app-my-toggle>
+    </ng-template>
+</toggle>

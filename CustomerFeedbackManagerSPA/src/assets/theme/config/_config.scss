@@ -1,0 +1,61 @@
+@import './colors';
+//Sitewide Whitespace
+$gutter-default: 16px;
+
+//Header
+$header-space: 20px;
+
+//Buttons
+$btn-radius: 5px;
+$text-size-button: 16px;
+$text-size-buttonsm: 12px;
+
+$header-navleft-space: $gutter-default * 3;
+
+$textsize-or: 12px;
+
+$section-padding: $gutter-default * 4;
+
+$border-radius: 20px;
+
+$box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.03);
+
+//footer
+$text-footnavlink: 12px;
+$text-footinfo: 12px;
+$text-footcopy: 11px;
+$text-foottitle: 14px;
+
+//Table
+$table-head-textsize: 12px;
+$table-head-textcolor: $text-dark;
+$table-body-textsize: 14px;
+$table-btnsize: 14px;
+
+//Card
+$card-titlesize: 18px;
+
+//Section
+$text-pagetitle: 18px;
+
+$dataspace : (
+    left: left,
+    right: right,
+    bottom: bottom,
+    top: top,
+);
+@each $label, $value in $dataspace {
+    [data-space='#{$label}'] {
+        margin-#{$value}: $gutter-default;
+    }
+}
+$textcolors : (
+    primary: $primary,
+    success: $success,
+    danger: $danger
+);
+@each $label, $value in $textcolors {
+    [data-text-color='#{$label}'] {
+        color: $value !important;
+    }
+}

@@ -1,0 +1,32 @@
+
+
+
+    <table class="table">
+      <thead class="bg-light">
+          <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Fist Name</th>
+            <th>Last Name</th>
+            <th>User Action</th>
+          </tr>
+      </thead>
+      <tbody  class="table-group-divider table-divider-color">
+        <tr  class="align-items-center" *ngFor="let customers of tableData ; let i = index">
+            <td >{{customers.id}}</td>
+          <td>{{ customers.email}}</td>
+          <td>{{ customers.first_name}}</td>
+          <td>{{ customers.last_name}}</td>
+          <td>
+            <button (click)="navigatetoCustomerList()"
+            type="button"
+            class="btn btn-link btn-rounded btn-sm fw-bold"
+            data-mdb-ripple-color="dark"
+            >
+      View Customer
+    </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+

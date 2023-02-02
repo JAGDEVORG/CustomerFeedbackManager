@@ -1,0 +1,212 @@
+.w {
+    &nodata {
+        padding: $gutter-default * 4;
+        @extend .d-flex;
+        @extend .ai-center;
+        &-text {
+            @extend .d-flex;
+            @extend .flex-column;
+            margin-left: $gutter-default * 3;
+        }
+        &-title {
+            font-size: 28px;
+            font-weight: 400;
+        }
+        img {
+            height: 100px;
+        }
+    }
+}
+.wtable {
+    width: calc(100% + 32px) !important;
+    margin-left: -#{$gutter-default};
+    margin-right: -#{$gutter-default};
+    &-con {
+        margin-bottom: $gutter-default;
+    }
+    &twrap {
+        @extend .d-flex;
+        @extend .ai-center;
+    }
+    &-tright {
+        [class^="wbtn"] {
+            margin-left: $gutter-default;
+        }
+    }
+    &-twrap {
+        @extend .d-flex;
+        @extend .ai-center;
+    }
+    &-wrap {
+        background: $white;
+        border-radius: 5px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        padding: $gutter-default;
+        margin-bottom: $gutter-default;
+        @extend .pos-rel;
+       
+    }    
+    &-h, thead {
+        border-bottom: 1px solid $border-color;
+        th, td {
+            font-weight: normal;
+            font-size: $table-head-textsize;
+            color: $table-head-textcolor;
+            padding: 5px $gutter-default;
+            border-color: $border-color;
+        }
+    }
+    &-b, tbody, tfoot {
+        td { 
+            font-size: $table-body-textsize;
+            padding: $gutter-default/2 $gutter-default;
+        }
+        tr {
+            &:not(:last-child) {
+                td {
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+        }
+    }
+    tfoot {
+        tr {
+                td {
+                    border-top: 1px solid $border-color;
+                }
+        }
+    }
+
+ 
+   
+    &-btn {
+        @extend .cursor-pointer;
+        @extend .transition;
+        border: 0;
+        background: $light;
+        border-radius: 5px;
+        font-size: $table-btnsize;
+        color: $text-dark;
+        display: inline-block;
+        padding: 3px 5px;
+        &:not(:last-child) {
+            margin-right: $gutter-default;
+        }
+        &.primary {
+            &:hover {
+                background: $primary-light;
+                color: $primary;
+            }
+        }
+        &.success {
+            &:hover {
+                background: $success-light;
+                color: $success;
+            }
+        }
+        &.danger {
+            &:hover {
+                background: $danger-light;
+                color: $danger;
+            }
+        }
+    }
+    
+
+    //Pagination
+    &-p {
+        @extend .d-flex;
+        @extend .ai-center;
+        @extend .jc-center;
+        font-size: 13px;
+        margin-bottom: $gutter-default;
+        color: $text-dark;
+        &nav {
+            margin: 0;
+            @extend .d-flex;
+            margin-left: $gutter-default;
+            margin-right: $gutter-default;
+            &item {
+                @extend .transition;
+                @extend .cursor-pointer;
+                @extend .d-flex;
+                @extend .ai-center;
+                @extend .jc-center;
+                border-radius: 3px;
+                margin: 0 5px;
+                background: $white;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+                color: inherit;
+                width: 25px;
+                height: 25px;
+                &:hover {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+        &back,
+        &next {
+            font-size: inherit;
+            color: inherit;
+            @extend .cursor-pointer;
+        }
+    }
+    &-title {
+        font-size: 18px;
+        @extend .d-block;
+        flex-grow: 1;
+    }
+
+}
+table.dataTable.no-footer {
+    margin-right: 0;
+    border-bottom: 0 !important;
+}
+::ng-deep {
+    .dataTables {
+        &_paginate {
+            @extend .d-flex;
+            @extend .jc-center;
+            width: 100%;
+            margin: $gutter-default 0;
+            .paginate_button {
+                padding: 0 !important;
+                min-width: 20px !important;
+                min-height: 20px !important;
+                margin: 0 8px !important;
+                background: $white !important;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+                color: $text-dark !important;
+                &.current {
+                    background: $primary !important;
+                    color: $white !important;
+                }
+                &:hover,
+                &.current {
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    color: $black;
+                }
+                &.previous,
+                &.next {
+                    box-shadow: none;
+                    background: transparent !important;
+                }
+            }
+        }
+        &_info {
+            text-align: center;
+            width: 100%;
+            font-size: 14px;
+            padding: $gutter-default 0;
+            color: $text-dark;
+        }
+    }
+
+    // table responsive
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter{
+        @include devices(mobile){
+            text-align: left;
+        }
+    }
+}

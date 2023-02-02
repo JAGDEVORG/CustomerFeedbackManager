@@ -1,0 +1,492 @@
+@import './buttons';
+$togglewidth: 45px;
+.w {
+    &label {
+        @extend .d-block;
+        font-size: 13px;
+        color: $text-dark;
+    }
+    &label-heading{
+        font-size: 15px;
+    }
+    //Captcha
+    &captcha {
+        @extend .pos-rel;
+        @extend .d-flex;
+        @extend .ai-center;
+        background: $white;
+        padding: 12px $gutter-default;
+        border-radius: 10px;
+        form {
+            flex-grow: 1;
+            margin: 0 $gutter-default;
+            input {
+                border: 0;
+                outline: 0;
+                width: 100%;
+            }
+        }
+        &.wshadow {
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.17);
+        }
+    }
+    &input {
+        &-con {
+            @extend .pos-rel;
+        }
+        @extend .pos-rel;
+        margin-bottom: 20px;
+        .dropdown-custom {
+            @extend .pos-abs;
+        }
+        &.has-clear {
+            .winput-field {
+                padding-right: 46px;
+               
+            }
+            .close-icon {
+                right: 32px;
+            }
+            
+        }
+        &-select {
+            @extend .transition;
+            @extend .pos-rel;
+            width: 100%;
+            border: 1px solid $border-color;
+            padding: 8px $gutter-default;
+            background: transparent;
+            z-index: 3;
+            border-radius: 5px;
+            ~ .winput-label {
+                top: 0;
+                left: 8px;
+                background: $white;
+                padding: 0 5px;
+                z-index: 4;
+                font-size: 12px;
+            }
+        }
+        &-field {
+            @extend .transition;
+            @extend .pos-rel;
+            width: 100%;
+            border: 1px solid $border-color;
+            padding: 8px $gutter-default;
+            background: transparent;
+            z-index: 3;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: 0;
+            &:focus,&:not(:placeholder-shown){
+                ~ .winput-label {
+                    top: 0;
+                    left: 8px;
+                    background: $white;
+                    padding: 0 5px;
+                    z-index: 4;
+                    font-size: 12px;
+                }
+                
+            }
+            &:focus {
+                border-color: $primary;
+                + .o-field-text {
+                    color: $primary;
+                }
+            }
+        }
+        &-label {
+            @extend .pos-abs;
+            top: 50%;
+            transform: translateY(-50%);
+            left: $gutter-default;
+            z-index: 2;
+            @extend .transition;
+            font-size: 13px;
+            color: $text-dark;
+            &.show {
+                position: relative;
+                left: 0;
+                margin: 0;
+            }
+            &.active {
+                top: 0;
+                    left: 8px;
+                    background: $white;
+                    padding: 0 5px;
+                    z-index: 4;
+                    font-size: 12px;
+            }
+        }
+        &.wshadow {
+            .winput-field {
+                border: 0 !important;
+                box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.17);
+                outline: 0;
+                padding: $gutter-default;
+            }
+            .winput-label {
+                background: transparent;
+            }
+        }
+        &.placeholder {
+            .winput-label {
+                top: 0;
+                    left: 8px;
+                    background: $white;
+                    padding: 0 5px;
+                    z-index: 4;
+                    font-size: 12px;
+            }
+        }
+        &-error {
+            @extend .pos-abs;
+            color: $danger;
+            top: 100%;
+            font-size: 11px;
+            right: 0;
+            &.left {
+                right: unset;
+                left: 0;
+            }
+        }
+        &-forgot {
+            @extend .pos-abs;
+            font-size: 12px;
+            right: $gutter-default;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9;
+        }
+        &.has-button {
+            @extend .d-flex;
+            @extend .ai-center;
+            .winput-field {
+                padding-right: 50px;
+            }
+            [class^='wbtn']{
+                @extend .pos-rel;
+                margin-left: 10px
+            }
+        }
+        
+        &-g {
+            @extend .d-flex;
+            flex-wrap: nowrap;
+            &btn {
+                margin-left: $gutter-default;
+            }
+            .winput {
+                flex-grow: 1;
+            }
+        }
+        &-comp {
+            @extend .pos-rel;
+        }
+    }
+    &check {
+        &s {
+            @extend .d-flex;
+                .wcheck {
+                    &:not(:last-child) {
+                        margin-right: $gutter-default;
+                    }
+                }
+                ~ .winput-label {
+                    top: 0;
+                    left: 0;
+                    background: $white;
+                    padding: 0 5px;
+                    z-index: 4;
+                    font-size: 12px;
+                }
+        }
+        margin-top: $gutter-default;
+        @extend .pos-rel;
+        &-check {
+            width: 14px;
+            height: 14px;
+            margin-right: $gutter-default / 2;
+            display: inline-block;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+            @extend .pos-rel;
+            @extend .transition;
+            &:before {
+                content: "";
+                width: 1px;
+                height: 1px;
+                @extend .pos-abs;
+                @extend .transition;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                border-radius: 2px;
+            }
+        }
+        &-label {
+            @extend .d-flex;
+            @extend .ai-center;
+            @extend .cursor-pointer;
+            @extend .transition;
+            font-size: $text-size-small;
+            color: $text-dark;
+        }
+        &-input {
+            display: none;
+            &:checked {
+                + .wcheck-label {
+                    color: $black;
+                    .wcheck-check {
+                        border-color: $primary;
+                        &:before {
+                            opacity: 1;
+                            width: 6px;
+                            height: 6px;
+                            background: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &select {
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        background-color: $white;
+        padding: 6px 13px;
+        width: 100%;
+        font-size: 14px;
+        &-multi {
+            width: 100%;
+            .select-button{
+                background-color: #fff;
+            }
+            ~ .winput-label {
+                top: 0;
+                left: 8px;
+                background: $white;
+                padding: 0 5px;
+                z-index: 4;
+                font-size: 12px;
+            }
+        }
+        .select-button{
+            background-color: #fff;
+        }
+    }
+    //Upload File
+    &upload {
+        @extend .pos-rel;
+        margin-bottom: 20px;
+        @extend .d-flex;
+        @extend .ai-start;
+        &-btn {
+            @extend .pos-rel;
+            margin-right: $gutter-default;
+            input {
+                @extend .pos-abs;
+                left: 0;
+                bottom: 0;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+        span {
+            .thumb-img {
+                width:40px;
+                height: 40px;
+            }
+        }
+    }
+    //UI Checkbox
+    &box {
+        &-check {
+            background: $white;
+            border-radius: 5px;
+            padding: $gutter-default*4 $gutter-default*2;
+            border: 1px solid $border-color;
+            @extend .d-flex;
+            @extend .ai-center;
+            @extend .jc-center;
+            @extend .transition;
+            @extend .cursor-pointer;
+            @extend .flex-column;
+            &input {
+                display: none;
+            }
+            &name {
+                font-size: 18px;
+            }
+            .fa {
+                color: $text-light;
+                @extend .transition;
+            }
+            &:hover {
+                box-shadow: $box-shadow;
+                color: $primary;
+                border-color: $primary;
+                .fa {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    &pagesave {
+        bottom: $gutter-default;
+        right: $gutter-default;
+        z-index: 99;
+    }
+    //Dropdown 
+    &drop {
+        margin-bottom: 0;
+        &-icon {
+            @extend .pos-abs;
+            @extend .cursor-pointer;
+            z-index: 10;
+            right: $gutter-default;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $white;
+        } 
+    }
+     //Toggle
+     &tog {
+        @extend .d-flex;
+        &-block {
+            margin-bottom: $gutter-default;
+        }
+        &-label {
+            @extend .d-block;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: $text-dark;
+            margin-top: -10px;
+            input{
+                width: 100%;
+                border: 1px solid $border-color;
+                padding: 0px $gutter-default;
+                background: transparent;
+                z-index: 3;
+                border-radius: 5px;
+                font-size: 12px;
+                outline: 0;
+            }
+        }
+        &-check {
+            width: $togglewidth;
+            height: 20px;
+            border-radius: 15px;
+            background: $text-light;
+            @extend .pos-rel;
+            @extend .transition;
+            &:before {
+                @extend .transition;
+                content: "";
+                width: 12px;
+                height: 12px;
+                background: $white;
+                border-radius: 50%;
+                display: block;
+                @extend .pos-abs;
+                top: 4px;
+                left: 4px;
+            }
+        }
+        &-wrap {
+            @extend .d-flex;
+            @extend .ai-center;
+            @extend .cursor-pointer;
+        }
+        &-text {
+            @extend .transition;
+            margin-left: $gutter-default;
+            font-size: 13px;
+            color: $text-dark;
+            &:before {
+                content: attr(data-check);
+            }
+        }
+        &-input {
+            &:checked {
+                ~ .wtog-wrap {
+                    .wtog-check {
+                        background: $success;
+                        &:before {
+                            transform: translateX(25px);
+                        }
+                    }
+                    .wtog-text {
+                        color: $black;
+                        &:before {
+                            content: attr(data-checked)
+                        }
+                    }
+                }
+            }
+        }
+        //Left Right Text
+        &-lr {
+            &text {
+                @extend .d-flex;
+                @extend .ai-center;
+                @extend .transition;
+                font-size: 14px;
+                font-weight: 500;
+                &:before {
+                    content: attr(data-textleft);
+                    color: $primary;
+                }
+                &:after {
+                    content: attr(data-textright);
+                }
+            }
+            &tog {
+                @extend .pos-rel;
+                margin: 0 $gutter-default;
+                height: 20px;
+                width: 50px;
+                flex-grow: 1;
+                background: #F1F5F9;
+                border-radius: 15px;
+                &:before {
+                    content: "";
+                    @extend .transition;
+                    @extend .pos-abs;
+                    display: block;
+                    width: 14px;
+                    height: 14px;
+                    top: 3px;
+                    left: 8px;
+                    border-radius: 50%;
+                    background: $primary;
+                }
+            }
+            &input {
+                display: none;
+                &:checked {
+                    ~ .wtog-lrtext {
+                        &:before {
+                            color: $text-dark;
+                        }
+                        &:after {
+                            color: $primary;
+                        }
+                        .wtog-lrtog {
+                            &:before {
+                                left: 28px;
+                            } 
+                        }                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+

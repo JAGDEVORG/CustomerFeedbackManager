@@ -1,0 +1,66 @@
+.ip {
+    //Select
+    &-select {
+        position: relative;
+        &-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid $border-color;
+            @extend .transition;
+            &:active, &:focus, &:focus-visible {
+                border-color: $border-color !important;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+            }
+            &:active, &:focus, &:focus-visible {
+                + label {
+                    color: $primary;
+                }
+                
+            }
+        }
+        &-label {
+            position: absolute;
+            margin: 0;
+            left: 10px;
+            top: -8px;
+            font-size: 12px;
+            background: $white;
+            padding-left: 5px;
+            padding-right: 5px;
+            @extend .transition;
+        }
+    }
+    //Input
+    &-input {
+        position: relative;
+        &-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid $border-color;
+            @extend .transition;
+            &:active, &:focus, &:focus-visible {
+                border-color: $border-color !important;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+            }
+            &:active, &:focus, &:focus-visible {
+                + label {
+                    color: $primary;
+                }
+                
+            }
+        }
+        &-label {
+            position: absolute;
+            margin: 0;
+            left: 10px;
+            top: -8px;
+            font-size: 12px;
+            background: $white;
+            padding-left: 5px;
+            padding-right: 5px;
+            @extend .transition;
+        }
+    }
+}

@@ -1,0 +1,192 @@
+$radius: 7px;
+
+
+
+
+$type: (
+'xsmall': 480px,
+'small': 768px,
+'medium': 960px,
+'large': 1180px,
+'xlarge': 1366px,
+);
+
+@each $label, $value in $type {
+    [data-modal="#{$label}"] {
+        .wmodal-wrap {
+            max-width: $value;
+        }
+    }
+};
+
+.wmodal {
+    &-content {
+        background: transparent !important;
+        border: 0 !important;
+    }
+    &-con {
+        padding: $gutter-default;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $gutter-default;
+        padding-right: $gutter-default;
+    }
+    &-wrap {
+        width: 100%;
+        background: $white;
+        border-radius: $radius;
+    }
+    &-title {
+        font-size: 18px;
+        font-weight: 500;
+        flex-grow: 1;
+        margin: 0;
+    }
+    &-h {
+        background: $light;
+        border-radius: $radius $radius 0 0;
+        border-bottom: 1px solid $border-color;
+        padding: 5px $gutter-default;
+        @extend .d-flex;
+        @extend .ai-center;
+        @extend .jc-between;
+        &right {
+            [class^='wbtn']{
+                margin-left: $gutter-default;
+            }
+        }
+    }
+    &-b {
+        padding: $gutter-default;
+    }
+    //Print 
+    &-p {
+        //Print header
+        &h {
+            width: 100%;
+            margin-bottom: $gutter-default;
+            border-collapse: collapse;
+            &info {
+                display: block;
+                text-align: right;
+                font-size: 12px;
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &title {
+            display: block;
+            font-size: 18px;
+            &.sub {
+                font-weight: normal;
+                font-size: 16px;
+            }
+            &.help {
+                color: $text-light;
+                font-size: 12px;
+            }
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        //form details
+        &det {
+            width: 100%;
+            border-collapse: collapse;
+            td {
+                border: 1px solid $border-color;
+                padding: $gutter-default;
+                vertical-align: baseline;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                &.noborder {
+                    td {
+                        border: 0;
+                        padding: 0;
+                    }
+                }
+            }
+            &info {
+                display: block;
+                font-size: 12px;
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+            &name {
+                font-size: 16px;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        &table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: $gutter-default;
+            border: 1px solid $border-color;
+            &h {
+                background: #f5f5f5;
+                border-bottom: 1px solid $border-color;
+                td, th {
+                    font-size: 12px;
+                    vertical-align: bottom;
+                    font-weight: normal;
+                    padding: 5px 10px;
+                }
+            }
+            &b {
+                td {
+                    border-bottom: 1px solid $border-color;
+                    padding: 5px 10px;
+                    font-size: 13px;
+                }
+            }
+        }
+        //help text
+        &text {
+            font-size: 11px;
+            text-align: center;
+            color: $text-dark;
+            margin-top: $gutter-default;
+        }
+        //signature
+        &sign {
+            p {
+                padding-top: 100px;
+                font-size: 13px;
+                @extend .d-flex;
+                @extend .ai-end;
+                &.right {
+                    @extend .jc-end;
+                }
+            }
+        }
+    }
+    
+    //Close Button
+    &-close {
+        border: 0 !important;
+        background: transparent;
+        color: $primary;
+        font-size: 24px;
+        line-height: 24px;
+        &:hover{
+            color: $danger;
+        }
+    }
+    &-label {
+        font-size: 14px;
+        margin-bottom:0;
+        @extend .d-block;  
+    }
+    &-des {
+        font-size: 14px;
+        font-weight: 700;
+        @extend .d-block;
+        margin-bottom: 20px;
+    }
+}

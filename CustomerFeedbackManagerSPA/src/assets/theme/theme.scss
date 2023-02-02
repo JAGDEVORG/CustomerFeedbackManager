@@ -1,0 +1,529 @@
+@import 'init';
+//Bootstrap Overrides
+.btn {
+    outline: 0 !important;
+    box-shadow: none !important;
+    padding-left: $gutter-default;
+    padding-right: $gutter-default;
+    border-radius: $btn-radius;
+    &-secondary {
+        background-color: $light;
+        color: $text-dark;
+        &:focus, &:active, &:hover {
+            border-color: $primary !important;
+            color: $primary !important;
+            border-color: $primary !important;
+            background: $light !important;
+        }
+    }
+    &-trans {
+        background: transparent;
+        border-color: transparent;
+    }
+    &-primary {
+        border-color: $primary;
+        background-color: $primary;
+    }
+    &-outline {
+        &-primary {
+            &:hover {
+                border-color: $primary;
+                background-color: $primary;
+            }
+        }
+    }
+}
+.show {
+    > .btn {
+        &-secondary {
+            border-color: $primary !important;
+            color: $primary !important;
+            border-color: $primary !important;
+            background: $light !important;
+        }
+    }
+}
+
+.dropdown {
+    &-menu {
+        &.show {
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+            border: 0;
+        }
+    }
+    &-item {
+        &:hover {
+            background: $light;
+        }
+    }
+}
+// body, html {
+//     height: 100%;
+// }
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+a[href], a {
+    color: $black;
+    text-decoration: none !important;
+}
+p {
+    margin-bottom: 0;
+}
+label {
+    margin-bottom: 0;
+}
+//Bootstrap Overrides
+.btn {
+    outline: 0 !important;
+    box-shadow: none !important;
+    padding-left: $gutter-default;
+    padding-right: $gutter-default;
+    border-radius: $btn-radius;
+    &-secondary {
+        background-color: $light;
+        color: $text-dark;
+        &:focus, &:active, &:hover {
+            border-color: $primary !important;
+            color: $primary !important;
+            background: $light !important;
+        }
+    }
+    &-success {
+        background-color: $success;
+        border-color: $success !important;
+        color: $white !important;
+        &:focus, &:active, &:hover {
+            border-color: darken($success, 10) !important;
+            color: $white !important;
+            background: darken($success, 10) !important;
+        }
+    }
+    &-trans {
+        background: transparent;
+        border-color: transparent;
+    }
+    &-primary {
+        border-color: $primary;
+        background-color: $primary;
+        color: $white !important;
+    }
+    &-outline {
+        &-primary {
+            &:hover {
+                border-color: $primary;
+                background-color: $primary;
+            }
+        }
+    }
+}
+.show {
+    > .btn {
+        &-secondary {
+            border-color: $primary !important;
+            color: $primary !important;
+            border-color: $primary !important;
+            background: $light !important;
+        }
+    }
+}
+
+.dropdown {
+    &-menu {
+        &.show {
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+            border: 0;
+        }
+    }
+    &-item {
+        &:hover {
+            background: $light;
+        }
+    }
+}
+.w {
+    //Link
+    &link {
+        @extend .pos-rel;
+        @extend .transition;
+        @extend .cursor-pointer;
+        &:before {
+            @extend .pos-abs;
+            height: 1px;
+            top: calc(100% + 2px);
+            @extend .transition;
+            background: currentColor;
+            content: "";
+            display: block;
+            left: 0;
+            width: 1px;
+            opacity: 0;
+        }
+        &:hover {
+            &:before {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+    //Footer
+    &f {
+        &-info {
+            font-size: $text-footinfo;
+        }
+        &-title {
+            font-size: $text-foottitle;
+        }
+        &-nav {
+            @extend .d-flex;
+            @extend .flex-column;
+            &link {
+                margin-top: $gutter-default;
+                font-size: $text-footnavlink;
+                width: max-content;
+                color: $black;
+                .fa {
+                    flex-shrink: 0;
+                    margin-right: calc(#{$gutter-default} - 5px);
+                }
+                &._fb {
+                    &:hover {
+                        color: $facebook;
+                    }
+                } 
+                &._tw {
+                    &:hover {
+                        color: $twitter;
+                    }
+                } 
+                &._li {
+                    &:hover {
+                        color: $linked;
+                    }
+                } 
+                &._sp {
+                    &:hover {
+                        color: $skype;
+                    }
+                } 
+            }
+        }
+    }
+    // OR text
+    &or {
+        color: $text-light;
+        display: inline-block;
+        margin-left: $gutter-default;
+        margin-right: $gutter-default;
+        font-size: $textsize-or;
+    }
+    
+    //Dashboard Styling
+    &d {
+        //Preview
+        &p {
+            @extend .d-flex;
+            height: 100%;
+            &-side {
+                background: url('../media/blur-sidebar.jpg') no-repeat;
+                background-size: cover;
+                width: 265px;
+                flex-shrink: 0;
+                flex-grow: 0;
+            }
+            &-con {
+                padding: $gutter-default $gutter-default * 2;
+                flex-grow: 1;
+            }
+            &-content {
+                padding: $gutter-default * 2 0;
+                width: 100%;
+                max-width: 1080px;
+            }
+            &-title {
+                font-size: 28px;
+                @extend .font-heading;
+                span {
+                    color: $primary;
+                }
+            }
+            //module features
+            &-ftr {
+                margin-top: $gutter-default * 3;
+                &box {
+                    background: $white;
+                    border-radius: 10px;
+                    border: 1px solid $border-color;
+                    padding: $gutter-default * 3;
+                    @extend .d-flex;
+                    @extend .flex-column;
+                    @extend .ai-center;
+                    @extend .transition;
+                    @extend .cursor-pointer;
+                    @extend .pos-rel;
+                    img {
+                        max-height: 60px;
+                        margin-bottom: $gutter-default;
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                        box-shadow: $box-shadow;
+                    }
+                    &:before {
+                        content: "\f058";
+                        @extend .pos-abs;
+                        @extend .transition;
+                        opacity: 0;
+                        top: $gutter-default;
+                        left: $gutter-default;
+                        color: $success;
+                        font: normal normal normal 22px/1 FontAwesome;
+                    }
+                }
+                &name {
+                    font-size: 18px;
+                    @extend .font-heading;
+                    font-weight: 600;
+                }
+                &check {
+                    &:checked {
+                        + .wdp-ftrbox {
+                            border-color: $success;
+                            border-width: 2px;
+                            &:before {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &plan {
+        &-row {
+            margin-top: $gutter-default * 2;
+        }
+        &-top {
+            @extend .d-flex;
+            @extend .ai-center;
+            .wtog {
+                margin-left: auto;
+            }
+        }
+        &-box {
+            background: $white;
+            border: 1px solid $border-color;
+            height: 100%;
+            padding: $gutter-default * 2;
+            border-radius: 10px;
+            @extend .transition;
+            @extend .pos-rel;
+            @extend .cursor-pointer;
+            width: 100%;
+            outline: 3px solid transparent;
+            &.popular {
+                .wplan-name {
+                    &:before {
+                        content: "Popular Plan";
+                    }
+                }
+            }
+            &:hover {
+                box-shadow: $box-shadow;
+            }
+        }
+        &-name,
+        &-cost {
+            @extend .font-heading;
+            font-weight: 600;
+            @extend .d-block;
+        }
+        &-name {
+            @extend .text-uppercase;
+            @extend .pos-rel;
+            display: inline-block;
+            font-size: 18px;
+            &:before {
+                @extend .pos-abs;
+                font-size: 12px;
+                color: currentColor;
+                bottom: 100%;
+                left: 0;
+                font-weight: 400;
+            }
+            &:after {
+                content: "\f058";
+                @extend .transition;
+                font: normal normal normal 18px/1 FontAwesome;
+                opacity: 0;
+                @extend .pos-abs;
+                left: 100%;
+                top: 50%;
+                transform: translateY(-60%);
+                margin-left: 10px;
+            }
+        }
+        &-cost {
+            @extend .d-block;
+            margin: $gutter-default 0;
+            font-size: 28px
+        }
+        &-label {
+            color: $text-dark;
+            font-size: 12px;
+            font-weight: normal;
+            @extend .d-block;
+        }
+        &-ftr {
+            @extend .d-block;
+            font-size: 12px;
+            margin-top: $gutter-default / 2;
+            span {
+                margin-top: 5px;
+                @extend .d-block;
+            }
+        }
+        &-s {
+            &:hover {
+                border-color: $standard;
+            }
+            .wplan-name {
+                color: $standard;
+            }
+        }
+        &-p {
+            border-color: $professional;
+            .wplan-name {
+                color: $professional;
+            }
+        }
+        &-b {
+            &:hover {
+                border-color: $business;
+            }
+            .wplan-name {
+                color: $business;
+            }
+        }
+        &-check {
+            &:checked {
+                + .wplan-box {
+                    outline: 2px solid $primary;
+                    .wplan-name {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                    &:after {
+                        opacity: 1;
+                    }
+                    &.wplan-s {
+                        border-color: $standard;
+                        outline-color: $standard;
+                    }
+                    &.wplan-p {
+                        border-color: $professional;
+                        outline-color: $professional;
+                    }
+                    &.wplan-b {
+                        border-color: $business;
+                        outline-color: $business;
+                    }
+                }
+            }
+        }
+    }
+    //toggle
+    &tog {
+        &-label {
+            @extend .pos-rel;
+            @extend .cursor-pointer;
+            height: 20px;
+            border-radius: 15px;
+            background: $white;
+            border: 1px solid $primary;
+            width: 40px;
+            &:before,
+            &:after {
+                @extend .pos-abs;
+                font-size: 12px;
+                @extend .font-para;
+                font-weight: 600;
+                color: $text-dark;
+                @extend .transition;
+            }
+            &:before {
+                content: attr(data-textbefore);
+                right: calc(100% + (#{$gutter-default} - 5px));
+                color: $primary;
+            }
+            &:after {
+                content: attr(data-textafter);
+                left: calc(100% +  (#{$gutter-default} - 5px));
+            }
+        }
+        &-circle {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: $primary;
+            @extend .pos-abs;
+            @extend .transition;
+            top: 2px;
+            left: 2px;
+        }
+        &-check {
+            &:checked {
+                + .wtog-label {
+                    .wtog-circle {
+                        left: 20px;
+                    }
+                    &:after {
+                        color: $primary;
+                    }
+                    &:before {
+                        color: $text-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+.bg {
+    &-dots {
+        background: url('../media/dots.svg') no-repeat;
+        background-size: 138px;
+        background-position: 90px 0;
+        &.bottom {
+            background-position: 400px 180px;
+        }
+    }
+    &-light {
+        background: $light !important;
+    }
+}
+.social {
+    &-fb {
+        color: $facebook;
+    }
+    &-tw {
+        color: $twitter;
+    }
+    &-li {
+        color: $linked;
+    }
+    &-sp {
+        color: $skype;
+    }
+}
+/*Reset*/
+.nb-theme-default {
+    nb-layout-header nav {
+        height: auto;
+        padding: 0;
+    }
+    li {
+        color: inherit;
+    }
+}

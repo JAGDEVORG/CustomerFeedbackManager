@@ -1,0 +1,9 @@
+.w {
+    &con {
+        width: 100%;
+        @extend .margin-auto;
+        max-width: 1180px;
+        padding-left: $gutter-default;
+        padding-right: $gutter-default;
+    }
+}

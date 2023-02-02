@@ -1,0 +1,22 @@
+//Font Family
+//Roboto For heading 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+//Montserrat for paragrah
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+$font-heading: 'Roboto', sans-serif;
+$font-paragraph: 'Montserrat', sans-serif;
+$header-navlink-size: 14px;
+$text-sectiontitle: 32px;
+$text-sectionsubtitle: 14px;
+$text-blocktitle: 18px;
+$text-size-small: 12px;
+.font {
+    &-heading {
+        font-family: $font-heading;
+    }
+    &-para {
+        font-family: $font-paragraph;
+    }
+}

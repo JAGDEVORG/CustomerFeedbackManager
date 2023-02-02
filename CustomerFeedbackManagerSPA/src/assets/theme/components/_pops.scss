@@ -1,0 +1,66 @@
+@import '../init';
+.w {
+    &pop {
+        &-wrap {
+            background: $white;
+            border-radius: 5px;
+            padding: $gutter-default;
+        }
+        &-h {
+            @extend .d-flex;
+            @extend .ai-center;
+            @extend .jc-between;
+        }
+        &-b {
+            padding: $gutter-default 0 0 0;
+        }
+        &-f {
+            padding: $gutter-default 0;
+            @extend .d-flex;
+            @extend .jc-end;
+        }
+        &-t {
+            flex-grow: 1;
+            font-size: 18px;
+        }
+    }
+    &print {
+        background: $white;
+        border: 1px solid $border-color;
+            &-h {
+                padding: $gutter-default;
+                @extend .d-flex;
+                @extend .ai-center;
+                @extend .flex-column;
+            }
+            &-d {
+                padding: $gutter-default;
+            }
+            &-date,
+            &-info {
+                @extend .d-flex;
+                @extend .jc-between;
+                border-top: 1px solid $border-color;
+                padding: 10px;
+            }
+            &-text {
+                font-size: 13px;
+                &-big {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+}
+@media only print {
+    .w {
+        &print {
+        background: $white;
+            &-h {
+                padding: $gutter-default;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

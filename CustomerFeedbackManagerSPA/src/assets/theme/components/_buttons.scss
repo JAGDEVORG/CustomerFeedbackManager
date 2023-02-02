@@ -1,0 +1,96 @@
+%button {
+    padding: $gutter-default / 2 $gutter-default;
+    font-size: $text-size-button;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    @extend .transition;
+    min-height: 38px;
+    outline: 0;
+    font-weight: 500;;
+}
+%buttonsm {
+    padding: 4px 8px;
+    font-size: $text-size-buttonsm;
+    line-height: 28px;
+}
+$button: (
+    p: $primary,
+    s: $success,
+    d: $danger,
+    l: $light, 
+    w: $white
+);
+.wbtn {
+    &-block {
+        @extend .d-flex;
+        margin: $gutter-default 0;
+    }
+    &-uppercase {
+        @extend .text-uppercase;
+    }
+    &-small {
+        @extend %buttonsm;
+    }
+    &-full {
+        width: 100%;
+    }
+    &-right {
+        @extend .jc-end;
+    }
+
+}
+@each $type, $value in $button {
+    @if $type == w {
+        .wbtn-#{$type} {
+            @extend %button;
+            border-color: $value;
+            background: $value;
+            color: $primary;
+            &:hover {
+                background: $primary;
+                color: $value;
+                border-color: $primary;
+            }
+        }
+    }
+    @else if $type != l {
+    .wbtn-o#{$type} {
+        @extend %button;
+        border-color: $value;
+        background: $white;
+        color: $value;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 6px 12px;
+        .download-file{
+            font-size: 19px;
+            padding-right: 5px;
+        }
+        &:hover {
+            background: $value;
+            color: $white;
+            outline: none;
+        }
+    }
+    .wbtn-#{$type} {
+        @extend %button;
+        border-color: $value;
+        background: $value;
+        color: $white;
+        &:hover {
+            background: darken($value, 10);
+            outline: none;
+        }
+    }
+}@else {
+    .wbtn-#{$type} {
+        @extend %button;
+        border-color: $value;
+        background: $value;
+        color: $primary;
+        &:hover {
+            background: darken($value, 10);
+        }
+    }
+}
+}

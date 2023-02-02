@@ -1,0 +1,27 @@
+.w {
+    &title {
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .ai-center;
+        &-text {
+            color: $primary;
+            font-size: $text-sectiontitle;
+            font-weight: 700;
+        }
+        &-sub {
+            @extend .text-uppercase;
+            font-size: $text-sectionsubtitle;
+        }
+        &.left {
+            @extend .ai-start;
+        }
+        &.white {
+            color: $white;
+            .wtitle-text,
+            .wtitle-sub {
+                color: inherit
+            }
+
+        }
+    }
+}

@@ -1,0 +1,455 @@
+@import './init'; // Default initialize file
+@import 
+'./components/dpage-title',
+'./components/form', //Form Components
+'./components/buttons', //Buttons
+'./components/card', //Card
+'./components/pops', //Popup/Modal
+'./components/table', //Table Design
+'./components/tooltip', //Tooltip
+'./components/steps', //Form Steps
+'./components/modal' //modal
+;
+::ng-deep {
+    ngx-header {
+        width: 100%;
+    }
+    .nb-theme-default {
+        nb-layout-header {
+            ~ .layout-container {
+                background: $light;
+                padding-top: 60px !important;
+            }
+        }
+    }
+   
+    .nb-theme-default nb-sidebar .scrollable {
+        padding: 16px !important;
+    }
+    .nb-theme-default nb-layout .layout .layout-container nb-sidebar.fixed, .nb-theme-default nb-layout .layout .layout-container nb-sidebar .main-container-fixed {
+        top: 60px !important;
+    }
+    .nb-theme-default nb-menu .menu-item {
+        border-bottom: 0 !important;
+    }
+    .nb-theme-default nb-sidebar .scrollable,
+    .nb-theme-default nb-sidebar .main-container {
+        max-width: 256px !important;
+    }
+    .nb-theme-default nb-menu .menu-item a:hover,
+    .nb-theme-default nb-menu .menu-item a.active {
+        color: $primary !important;
+    }
+    .nb-theme-default nb-layout .layout .layout-container .content nb-layout-footer nav {
+        padding: 8px $gutter-default !important;
+        background: $white !important;
+        border-color: $border-color !important;
+        .created-by,
+        .socials {
+            font-size: 13px !important;
+            color: $text-dark !important;
+            strong {
+                color: $primary !important;
+            }
+        }
+    }
+    .dialogScroll{
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    .nowhitespace {
+        white-space: nowrap;
+    }
+    .nb-theme-default nb-menu .menu-item a.active .menu-icon {
+        color: $primary !important;
+    }
+}
+
+.wd {
+    @extend .d-flex;
+    @extend .flex-column;
+    height: 100%;
+    //Header
+    &-h {
+        background: $white;
+        @extend .d-flex;
+        @extend .ai-center;
+        padding: $gutter-default - 4px;
+        min-height: 60px;
+        > * {
+            margin: 0 $gutter-default;
+        }
+        &toggle {
+            color: $primary;
+            @extend .cursor-pointer;
+            font-size: 18px;
+        }
+        &right {
+            margin-left: auto !important;
+            @extend .d-flex;
+            @extend .ai-center;
+        }
+        //Logo
+        &logo {
+            @extend .d-flex;
+            @extend .ai-center;
+            text-decoration: none !important;
+            &type {
+                color: $text-light;
+                font-size: 12px;
+                margin-left: 10px;
+                @include devices(mobile){
+                    display: none;
+                }
+
+            }
+        }
+        //company switch
+        &comp {
+            @extend .pos-rel;
+            min-width: 180px;
+            @include devices(mobile){
+                min-width: 115px;
+            }
+            &icon {
+                &-left,
+                &-right {
+                    @extend .pos-abs;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $text-dark;
+                    font-size: 13px;   
+                    @include devices(mobile){
+                        font-size: 21px;
+                    }                
+                }
+                &-left {
+                    left: 10px;                    
+                }
+                &-right {
+                    right: 15px;
+                    @include devices(mobile){
+                        display: none;
+                    } 
+                }
+            }
+            .wselect {
+                background: $white;
+                border-radius: 10px;
+                padding: 8px 30px;
+                font-size: 14px;
+                outline: 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                width: min-content;
+                min-width: 100%;
+                box-shadow: 0 0 10px rgba($black, 0.1);
+                border: 1px solid $border-color;
+                @include devices(mobile){
+                    display: none;
+                }
+            }
+        }
+    }
+    &-wrap {
+        flex-grow: 1;
+        height: 100%;
+        @extend .d-flex;
+    }
+    //Sidebar
+    &-s {
+        background: $white;
+        height: 100%;
+        width: max-content;
+        @extend .d-flex;
+        flex-shrink: 0;
+    }
+    //Navigation
+    &-nav {
+        padding: 24px;
+        padding-left: 0;
+        display: none;
+        &title {
+            color: $primary;
+            padding-left: $gutter-default;
+        }
+        &item {
+            margin-top: 5px;
+        }
+        &link {
+            font-size: 13px;
+            padding: 5px $gutter-default;
+            border-radius: 10px;
+            outline: 1px solid transparent;
+            @extend .d-block;
+            @extend .cursor-pointer;
+            @extend .transition;
+            &:hover {
+                background: $light;
+            }
+        }
+        &check {
+            &.shownav2 {
+                &:checked ~ .wd-inav {
+                    .wd-inavlink {
+                        label {
+                            background: transparent;
+                        }
+                    }
+                    .wd-inavicon {
+                        rect {
+                            fill: $black;
+                        }
+                        path {
+                            stroke: $black;
+                        }
+                    }
+                    .shownav2-active {
+                        label {
+                            background: $primary;
+                        }
+                        .wd-inavicon {
+                            path {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+                &:checked ~ .wd-nav2 {
+                    display: block;
+                }
+            }
+            &.shownav3 {
+                &:checked ~ .wd-inav {
+                    .wd-inavlink {
+                        label {
+                            background: transparent;
+                        }
+                    }
+                    .wd-inavicon {
+                        rect {
+                            fill: $black;
+                        }
+                        path {
+                            stroke: $black;
+                        }
+                    }
+                    .shownav2-active {
+                        .wd-inavicon {
+                            path {
+                                stroke: $black;
+                            }
+                        }
+                    }
+                    .shownav3-active {
+                        label {
+                            background: $primary;
+                        }
+                        .wd-inavicon {
+                            path {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+                &:checked ~ .wd-nav3 {
+                    display: block;
+                }
+            }
+        }
+    }
+    //Content
+    &-c {
+        flex-grow: 1;
+        padding: 8px;
+        @extend .transition;
+        @extend .pos-rel;
+    }
+    &-c {
+        flex-grow: 1;
+        padding: 8px;
+        @extend .transition;
+    }
+    //Icon Navbar
+    &-inav {
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .ai-center;
+        padding: $gutter-default * 2  $gutter-default;
+        &icon {
+            @extend .transition;
+            stroke,rect {
+                fill: $black;
+            }
+        }
+        &link {
+            label {
+                @extend .d-flex;
+                @extend .ai-center;
+                @extend .jc-center;
+                @extend .transition;
+                @extend .pos-rel;
+                @extend .cursor-pointer;
+                margin-bottom: $gutter-default;
+                width: 40px;
+                height: 40px;
+                border-radius: 15px;
+                &:hover {
+                    background: $primary-light;
+                }
+            }
+            
+            &:before {
+                content: attr(data-tooltip);
+                @extend .pos-abs;
+                left: calc(100% + #{$gutter-default});
+                background: $white;
+                padding: 5px $gutter-default;
+                border-radius: 15px;
+                white-space: nowrap;
+                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                font-size: 14px;
+                font-weight: 500;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &.active {
+                label {
+                    background: $primary;
+                }
+               
+                .wd-inavicon {
+                    rect, stroke {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+.wstick {
+    position: sticky;
+}
+
+.light-bg {
+     background-color: $light;
+}
+.box{
+    &-fix{
+       
+        @extend .margin-auto;
+         
+    }
+    &-title{
+        font-size: 35px;
+        color: $primary;
+        }  
+        &-wmodal{
+        background: $white;
+        border-radius: $radius;
+        padding: 60px;             
+    }
+}   
+.w {
+    &total{
+        padding: 20px;
+        border: 1px solid $border-color;
+        border-radius: 0px;
+        .fa{
+            color: $primary;            
+            margin-right: 20px;
+            font-size: 20px;
+
+        }
+        ul{
+            @extend .d-flex;
+        }        
+       &-list{
+           margin-right: 50px;
+           padding-right: 50px;
+           border-right: 1px solid $border-color;
+         &:last-child{
+             border: none;
+         }             
+       } 
+       &-label{
+          color: $text-dark;
+          font-size: 14px;
+          margin-bottom: 0;
+          font-weight: 400;
+       }
+       &-number{
+           color: $black;
+           font-size: 24px;
+       }
+    }
+}
+.t{
+    &dropdown{       
+        tbody{
+            tr:nth-child(2n+2){
+                background-color: $light;
+            }
+            td{
+               border-bottom: none !important;            
+                table{  
+                    width: 100% !important;                 
+                    tr{
+                        background-color: $white;
+                        border-bottom: 1px solid $border-color;
+                        .fa{
+                            background-color: $text-dark;
+                        }
+                    }
+                }
+            }  
+            .hidetable{
+                background-color: $light;
+                .inner-td{
+                    padding-left: 70px !important;
+                }
+            } 
+        }
+       
+       &-icon {
+           width: 30px;
+         .fa {
+              background-color: $primary;
+              @extend .text-center;
+              color: $white;
+              padding: 5px 9px;
+              border-radius: 5px;
+              font-size: 16px;
+              margin-left: 12px;
+           }
+          
+       } 
+    }
+}
+.w{
+     &company{
+         @extend .pos-fix;
+         &-box{
+             background-color: $white;
+             padding: 12%;
+             border-radius: 5px;
+         }
+         &-btn{
+            color: $white;
+            border: none;
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+            padding: 9px;
+            font-size: 16px;
+            background-color: $success;
+         }
+     }
+}

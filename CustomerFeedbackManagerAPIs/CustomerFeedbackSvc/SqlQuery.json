@@ -1,0 +1,10 @@
+[
+  {
+    "queryName": "GetCustomerById",
+    "queryValue": "SELECT * FROM [dbo].[Customer] where id=@id"
+  },
+  {
+    "queryName": "GetCustomerById1",
+    "queryValue": "SELECT1 * FROM [dbo].[Customer] where id=@id"
+  }
+]

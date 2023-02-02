@@ -1,0 +1,62 @@
+.wcard {
+    background: $white;
+    border-radius: 5px;
+    &-h,
+    &-b {
+        padding: $gutter-default;
+        @include devices(mobile){
+            display: block !important;
+        }
+    }
+    &-h {
+        @extend .d-flex;
+        @extend .ai-center;
+        &btn {
+            margin-left: auto;
+        }
+        &right {
+            [class^="wbtn"] {
+                margin-left: $gutter-default;
+                @include devices(mobile){
+                    margin-left: 0;
+                    margin-top: $gutter-default;
+                  }
+            }
+          
+        }
+    }
+    &-b {
+        &title {
+            @extend .d-block;
+            font-size: $card-titlesize;
+        }
+        nb-tab {
+            padding: 0 !important;
+        }
+    }
+    &-t {
+        font-size: $card-titlesize;
+        @extend .font-heading;
+        margin: 0;
+        flex-grow: 1;
+        line-height: 100%;
+    }
+    &.shadow {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+    &-action {
+        @extend .d-flex;       
+        @extend .ai-center;
+        @extend .jc-end;
+        @include devices(mobile){
+            display: block !important;
+         }
+        [class^="wbtn-"] {
+            margin-left: $gutter-default;   
+            @include devices(mobile){               
+                margin-top: $gutter-default;
+                margin-left: 0; 
+             }         
+        }
+    }
+}

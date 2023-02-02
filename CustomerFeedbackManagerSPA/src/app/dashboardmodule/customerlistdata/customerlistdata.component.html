@@ -1,0 +1,32 @@
+
+ <div class="container mt-5">
+  
+    <h2>Angular Display Data from Json dummy json.</h2>
+    
+    <table class="table table-striped">
+      <thead >
+          <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Fist Name</th>
+            <th>Last Name</th>
+            <th>User Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customers of tableData ; let i = index">
+            <td >{{customers.id}}</td>
+          <td>{{ customers.email}}</td>
+          <td>{{ customers.first_name}}</td>
+          <td>{{ customers.last_name}}</td>
+          <td>
+            <button type="button" class="btn btn-danger btn-floating">
+            <i class="fas fa-magic"></i>
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+  <!-- <table #dataTable class="display" style="width:100%"> -->
+<!-- </table> -->

@@ -1,0 +1,106 @@
+.d {
+    &-flex {
+        display: flex;
+    }
+    &-block {
+        display: block;
+    }
+}
+.ai {
+    &-center {
+        align-items: center;
+    }
+    &-start {
+        align-items: flex-start;
+    }
+    &-end {
+        align-items: flex-end;
+    }
+}
+.jc {
+    &-center {
+        justify-content: center;
+    }
+    &-start {
+        justify-content: flex-start;
+    }
+    &-end {
+        justify-content: flex-end;
+    }
+    &-between {
+        justify-content: space-between;
+    }
+}
+.align-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-uppercase {
+        text-transform: uppercase;
+    }
+    &-white {
+        color: $white;
+    }
+}
+.flex {
+    &-wrap {
+        flex-wrap: wrap;
+    }
+    &-nowrap {
+        flex-wrap: nowrap;
+    }
+    &-column {
+        flex-direction: column;
+    }
+}
+.cursor {
+    &-pointer {
+        cursor: pointer;
+    }
+}
+.transition {
+    transition: all linear 0.2s;
+}
+.pos {
+    &-fix {
+        position: fixed;
+    }
+    &-rel {
+        position: relative;
+    }
+    &-abs {
+        position: absolute;
+    }
+    &-sticky {
+        position: sticky;
+    }
+}
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.box-shadow {
+    box-shadow: $box-shadow;
+}
+.space-only {
+    opacity: 0;
+}
+.fixed-width{
+    @extend .pos-fix;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;   
+}
+.both-center{
+    @extend .d-flex;
+    @extend .ai-center; 
+}
